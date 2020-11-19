@@ -41,8 +41,8 @@ Alternatively you can check out the app at https://sheltered-scrubland-15458.her
     * Express
 
 ## Demo
-![Demo](./instructional-resources/note-taker.gif)
-![PagePreview](./instructional-resources/note-taker.png)
+![Demo](instructional-resource/note-taker.gif)
+![PagePreview](instructional-resource/note-taker.gif)
 
 
 ## Links
