@@ -10,7 +10,7 @@ const { v4: uuidv4 } = require('uuid');
 const app = express();
 
 //3. Define the PORT
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 const notes =[{
     title: "Groceries",
