@@ -36,9 +36,9 @@ app.get("/notes", (req,res) => {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
-//API Routing
+//API Routing  
     //GET ROUTE
-app.get("/api/notes", (req,res) => {
+    app.get("/api/notes", (req,res) => {
     fs.readFile("./db/db.json", (err,data) => {
         if (err) throw err;
         const previousNotes = JSON.parse(data);
@@ -46,13 +46,11 @@ app.get("/api/notes", (req,res) => {
     });
 });
 
-
-
     //POST ROUTE
 app.post("/api/notes", (req,res) => {
     let previousNotes = fs.readFileSync("./db/db.json");
-    previousNotes = JSON.parse(previousNotes);
     req.body.id = uuidv4();
+    previousNotes = JSON.parse(previousNotes);
     previousNotes.push(req.body);
     previousNotes=JSON.stringify(previousNotes);
     fs.writeFileSync("./db/db.json", previousNotes);
