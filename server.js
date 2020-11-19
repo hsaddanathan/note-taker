@@ -36,32 +36,46 @@ app.get("/notes", (req,res) => {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
+//API Routing
+    //GET ROUTE
 app.get("/api/notes", (req,res) => {
     fs.readFile("./db/db.json", (err,data) => {
         if (err) throw err;
-        const savedNotes = JSON.parse(data);
-        return res.json(savedNotes);
+        const previousNotes = JSON.parse(data);
+        return res.json(previousNotes);
     });
 });
+
+
+
+    //POST ROUTE
+app.post("/api/notes", (req,res) => {
+    let previousNotes = fs.readFileSync("./db/db.json");
+    previousNotes = JSON.parse(previousNotes);
+    req.body.id = uuidv4();
+    previousNotes.push(req.body);
+    previousNotes=JSON.stringify(previousNotes);
+    fs.writeFileSync("./db/db.json", previousNotes);
+    previousNotes=JSON.parse(previousNotes);
+    return res.json(previousNotes);
+})
+
+    //DELETE route
+app.delete("/api/notes/:id", (req,res) => {
+    let previousNotes = fs.readFileSync("./db/db.json");
+    previousNotes = JSON.parse(previousNotes);
+    previousNotes = previousNotes.filter(function(data){
+        return data.id != req.params.id;
+        });
+    previousNotes = JSON.stringify(previousNotes);
+    fs.writeFileSync("./db/db.json",previousNotes);
+    previousNotes = JSON.parse(previousNotes);
+    return res.send(previousNotes);
+})
 
 app.get("*", (req,res) => {
     res.sendFile(path.join(__dirname, "/public/index.html"));
 });
-
-    //API Routing
-app.post("/api/notes", (req,res) => {
-    let savedNotes = fs.readFileSync("./db/db.json");
-    savedNotes = JSON.parse(savedNotes);
-    req.body.id = uuidv4();
-    savedNotes.push(req.body);
-    savedNotes=JSON.stringify(savedNotes);
-    fs.writeFileSync("./db/db.json", savedNotes);
-    savedNotes=JSON.parse(savedNotes);
-    return res.json(savedNotes);
-    
-})
-
-
 
 //4. Listen on the port
 app.listen(PORT,() => {
