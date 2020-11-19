@@ -42,7 +42,7 @@ Alternatively you can check out the app at https://sheltered-scrubland-15458.her
 
 ## Demo
 ![Demo](instructional-resource/note-taker.gif)
-![PagePreview](instructional-resource/note-taker.gif)
+![PagePreview](instructional-resource/note-taker.png)
 
 
 ## Links
