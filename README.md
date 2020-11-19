@@ -31,33 +31,36 @@ Then the user can see the program run locally by navigating to https://localhost
 
 Once the user is finished they can shut down the server by typing `Ctrl + C`. 
 
-Alternatively you can check out the app at 
+Alternatively you can check out the app at https://sheltered-scrubland-15458.herokuapp.com/
 
-After the last task, you can navigate to the "Output Directory", select the "team.html", and preview in browser. 
 
-<!-- ## Technology Used
+## Technology Used
     * node.js
     * Javascript
-    * Inquirer
-    * Jest 
+    * UUID
+    * Express
 
 ## Demo
-![Demo](develop-resources/assets/app-cli.gif)
-![PagePreview](develop-resources/assets/app-preview.png)
+![Demo](instructional-resources/note-taker.gif)
+![PagePreview](instructional-resources/note-taker.png)
 
 
 ## Links
 
-employee-template-engine repository link:
-    https://github.com/hsaddanathan/employee-template-engine.git
+note-taker Github repository link:
+    https://github.com/hsaddanathan/note-taker.git
 
+note-taker Heroku Link
+    https://sheltered-scrubland-15458.herokuapp.com/
 
+note-take Demo Video
+    https://drive.google.com/file/d/1p5MmwHRqC33s_8du2RjLHxXMZ8bWl4i5/view
 
 ## Contributors 
 [@hsaddanathan](https://github.com/hsaddanathan)
 
-*** Tests, HTML Templates, htmlRender code, and package.json were provided by "© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved." 
+***  HTML Templates, JS Template, CSS Template, and package.json were provided by "© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved." 
 
 
 ## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
